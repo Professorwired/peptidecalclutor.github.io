@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw & Dose Calculator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DRAW & DOSE CALCULATOR</h1>
+        <div class="section">
+            <div class="card" id="dose-card">
+                <img src="https://cdn.shopify.com/s/files/1/0588/0859/8663/files/Dose_Icon_a63cb611-6699-442f-87b4-16d03256cb6e_small.png?v=1718531914" alt="Dose of Peptide">
+                <h2>Dose of Peptide</h2>
+                <div class="buttons">
+                    <button onclick="selectDose(this, 0.1)">0.1mg</button>
+                    <button onclick="selectDose(this, 0.25)">0.25mg</button>
+                    <button onclick="selectDose(this, 0.5)">0.5mg</button>
+                    <button onclick="selectDose(this, 1)">1mg</button>
+                    <button onclick="selectDose(this, 2.5)">2.5mg</button>
+                    <button onclick="selectDose(this, 5)">5mg</button>
+                    <button onclick="selectDose(this, 7.5)">7.5mg</button>
+                    <button onclick="selectDose(this, 10)" class="selected">10mg</button>
+                    <button onclick="selectDose(this, 12.5)">12.5mg</button>
+                    <button onclick="selectDose(this, 15)">15mg</button>
+                    <button onclick="selectDose(this, 'Other')">Other</button>
+                </div>
+                <p>10 mg = 10000 mcg(μg)</p>
+            </div>
+            <div class="card" id="strength-card">
+                <img src="https://cdn.shopify.com/s/files/1/0588/0859/8663/files/Frame_1228.png?v=1718183335" alt="Peptide Strength">
+                <h2>Peptide Strength</h2>
+                <div class="buttons">
+                    <button onclick="selectStrength(this, 1)">1mg</button>
+                    <button onclick="selectStrength(this, 5)">5mg</button>
+                    <button onclick="selectStrength(this, 10)">10mg</button>
+                    <button onclick="selectStrength(this, 15)">15mg</button>
+                    <button onclick="selectStrength(this, 20)" class="selected">20mg</button>
+                    <button onclick="selectStrength(this, 50)">50mg</button>
+                    <button onclick="selectStrength(this, 'Other')">Other</button>
+                </div>
+            </div>
+            <div class="card" id="water-card">
+                <img src="https://cdn.shopify.com/s/files/1/0588/0859/8663/files/Frame_1228_2.png?v=1718183336" alt="Bacteriostatic Water">
+                <h2>Bacteriostatic Water</h2>
+                <div class="buttons">
+                    <button onclick="selectWater(this, 0.5)" class="selected">0.5mL</button>
+                    <button onclick="selectWater(this, 1)">1.0mL</button>
+                    <button onclick="selectWater(this, 1.5)">1.5mL</button>
+                    <button onclick="selectWater(this, 2)">2.0mL</button>
+                    <button onclick="selectWater(this, 2.5)">2.5mL</button>
+                    <button onclick="selectWater(this, 3)">3.0mL</button>
+                    <button onclick="selectWater(this, 'Other')">Other</button>
+                </div>
+                <p>Common Amounts<br>GLP-1s: 0.5mL to 1mL<br>Peptides: 2.5mL to 3mL</p>
+            </div>
+        </div>
+        <div class="result">
+            <h2>Result</h2>
+            <p>PEPTIDE DOSE<br><span id="peptide-dose">10 mg</span></p>
+            <p>DRAW SYRINGE TO<br><span id="syringe-units">25 units</span></p>
+            <div class="scale-wrapper">
+                <div class="scale">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+                <div class="scale-readings">
+                    <span class="scale-reading">0</span>
+                    <span class="scale-reading">5</span>
+                    <span class="scale-reading">10</span>
+                    <span class="scale-reading">15</span>
+                    <span class="scale-reading">20</span>
+                </div>
+            </div>
+            <p>YOUR VIAL CONTAINS<br><span id="vial-doses">2 doses</span></p>
+            <p>CONCENTRATION<br><span id="concentration">40 mg/mL</span></p>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
