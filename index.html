@@ -25,6 +25,7 @@
                     <button onclick="selectDose(this, 12.5)">12.5mg</button>
                     <button onclick="selectDose(this, 15)">15mg</button>
                     <button onclick="selectDose(this, 'Other')">Other</button>
+                    <input id="dose-other-input" type="number" placeholder="Enter dose" style="display: none;" oninput="setOtherDose(this)">
                 </div>
                 <p>10 mg = 10000 mcg(μg)</p>
             </div>
@@ -39,6 +40,7 @@
                     <button onclick="selectStrength(this, 20)" class="selected">20mg</button>
                     <button onclick="selectStrength(this, 50)">50mg</button>
                     <button onclick="selectStrength(this, 'Other')">Other</button>
+                    <input id="strength-other-input" type="number" placeholder="Enter strength" style="display: none;" oninput="setOtherStrength(this)">
                 </div>
             </div>
             <div class="card" id="water-card">
@@ -52,6 +54,7 @@
                     <button onclick="selectWater(this, 2.5)">2.5mL</button>
                     <button onclick="selectWater(this, 3)">3.0mL</button>
                     <button onclick="selectWater(this, 'Other')">Other</button>
+                    <input id="water-other-input" type="number" placeholder="Enter water amount" style="display: none;" oninput="setOtherWater(this)">
                 </div>
                 <p>Common Amounts<br>GLP-1s: 0.5mL to 1mL<br>Peptides: 2.5mL to 3mL</p>
             </div>
@@ -74,6 +77,7 @@
             </div>
             <p>YOUR VIAL CONTAINS<br><span id="vial-doses">2 doses</span></p>
             <p>CONCENTRATION<br><span id="concentration">40 mg/mL</span></p>
+            <p id="error-message" class="error-message"></p>
         </div>
     </div>
     <script src="main.js"></script>
