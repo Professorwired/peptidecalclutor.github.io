@@ -1,4 +1,3 @@
-/* main.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -42,16 +41,17 @@ h1 {
 }
 
 .buttons button {
-    background-color: yellow;
+    background-color: royalblue; /* Changed to royal blue */
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 14px;
+    color: white; /* Ensure text color is white for better contrast */
 }
 
 .buttons button.selected {
-    background-color: orange;
+    background-color: darkblue; /* Darker shade of royal blue for selected button */
     color: white;
 }
 
